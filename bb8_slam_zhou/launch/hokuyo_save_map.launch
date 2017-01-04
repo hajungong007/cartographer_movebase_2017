@@ -1,0 +1,28 @@
+<launch>
+  <param name="/use_sim_time" value="false" />
+
+  <node name="laser_node" pkg="hokuyo_node" type="hokuyo_node" respawn="true" respawn_delay="3" >
+    <param name="calibrate_time" value="true" />
+    <param name="frame_id" value="laser" />
+    <param name="port" value="/dev/ttyACM0" />
+  </node>
+
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find bb8_slam_zhou)/configuration_files
+          -configuration_basename demo_hokuyo.lua"
+      output="screen">
+    <remap from="scan" to="scan" />
+  </node>
+<!--
+  <include file="$(find xsens_driver)/launch/xsens.launch" />
+-->
+
+<!--
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
+-->
+
+  <node name="map_saver" pkg="map_server" type="map_saver" args="-f /home/joey/.ros/maps/mymap" respawn="true" respawn_delay="5" />
+</launch>

@@ -95,6 +95,11 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+install(
+  DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
 ## Declare a cpp library
 # add_library(test_py
 #   src/${PROJECT_NAME}/test_py.cpp
@@ -131,11 +136,6 @@ install(PROGRAMS
   src/mtdevice.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-
- install(DIRECTORY launch
-    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  )
-
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS test_py test_py_node

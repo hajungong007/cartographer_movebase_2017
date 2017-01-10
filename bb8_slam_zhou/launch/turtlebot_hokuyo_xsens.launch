@@ -21,7 +21,7 @@
       type="cartographer_node" args="
           -configuration_directory
               $(find bb8_slam_zhou)/configuration_files
-          -configuration_basename turtlebot_hokuyo.lua"
+          -configuration_basename turtlebot_hokuyo_xsens.lua"
       output="screen">
     <remap from="points2" to="/camera/depth/points" />
   </node>

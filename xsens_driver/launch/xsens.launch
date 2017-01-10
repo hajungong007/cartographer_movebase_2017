@@ -1,6 +1,6 @@
 <launch>
   <node name="xsens_imu" pkg="xsens_driver" type="mtnode.py" >
-   <param name="frame_id" value="imu" />
+  <param name="frame_id" value="imu" />
    <param name="device" value="/dev/ttyUSB0" />
    <param name="baudrate" value="115200" />
    <param name="frame_local" value="ENU" />

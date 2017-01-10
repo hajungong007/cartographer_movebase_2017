@@ -132,6 +132,11 @@ install(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+ install(DIRECTORY launch
+    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  )
+
+
 ## Mark executables and/or libraries for installation
 # install(TARGETS test_py test_py_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}

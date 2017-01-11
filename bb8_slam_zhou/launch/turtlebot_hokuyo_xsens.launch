@@ -26,14 +26,16 @@
     <remap from="points2" to="/camera/depth/points" />
   </node>
 
-<!--
-  <node name="flat_world_imu_node" pkg="cartographer_turtlebot"
-      type="cartographer_flat_world_imu_node" output="screen">
-    <remap from="imu_in" to="/mobile_base/sensors/imu_data_raw" />
-    <remap from="imu_out" to="/imu" />
-  </node>
--->
 
-  <include file="$(find xsens_driver)/launch/xsens.launch" />
+  <node name="xsens_imu" pkg="xsens_driver" type="mtnode.py" respawn="true" respawn_delay="0" >
+  <param name="frame_id" value="gyro_link" />
+   <param name="device" value="/dev/ttyUSB1" />
+   <param name="baudrate" value="115200" />
+   <param name="frame_local" value="ENU" />
+   <remap from="/mti/sensor/imu" to="/imu" />
+  </node>
+
+
+
 
 </launch>

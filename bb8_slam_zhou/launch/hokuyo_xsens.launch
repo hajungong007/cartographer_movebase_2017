@@ -1,5 +1,5 @@
 <launch>
-  <arg name="mymap_file" default="/home/zbox/.ros/maps/mymap"/>
+  <arg name="mymap_file" default="$(find bb8_slam_zhou)/maps/mymap"/>
   <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/dummy.yaml"/>
 
 

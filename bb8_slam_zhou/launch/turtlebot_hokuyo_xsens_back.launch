@@ -13,7 +13,9 @@
 
 <!-- use odom data to show the path -->
 
+<!--
   <node pkg="bb8_slam_zhou" type="foot_print" name="foot_printer" />
+-->
 
 
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />

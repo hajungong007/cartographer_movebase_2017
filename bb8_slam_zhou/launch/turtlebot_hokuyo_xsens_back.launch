@@ -7,8 +7,10 @@
 
  <node pkg="tf" type="static_transform_publisher" name="lidar_tf_broadcaster" args="0 0 0.4 3.14 0 0 base_footprint laser 100" />
 
+<!--
  <node name="rviz" pkg="rviz" type="rviz" required="true"
       args="-d $(find bb8_slam_zhou)/launch/carto_nav_turtlebot.rviz" />
+-->
 
 
 <!-- use odom data to show the path -->

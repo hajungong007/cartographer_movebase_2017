@@ -32,5 +32,7 @@
       args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
 -->
 
+<!--
   <node name="map_saver" pkg="map_server" type="map_saver" args="-f $(find bb8_slam_zhou)/maps/mymap" respawn="true" respawn_delay="5" />
+-->
 </launch>
